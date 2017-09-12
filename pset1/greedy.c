@@ -11,12 +11,12 @@ int main(void)
 
     // Nickel
     int nickel = 5;
+    
+    // Penny
+    int penny = 1;
 
     // Keep count of coins initialized at 0
     int count = 0;
-
-    // Penny
-    int penny = 1;
 
     float change;
 
@@ -31,10 +31,11 @@ int main(void)
 
     int balance = (change * 100);
     printf("%i\n", balance);
-    // Divide change by Quarter using modulo
+    
     // 32 > 25
     while(balance > 0)
     {
+        //Quarter
         if(balance - quarter >= 0)
         {
         // change = 7
@@ -45,10 +46,10 @@ int main(void)
         }
 
 
-        // if change logic
+        // Dime
         else if(balance - dime >= 0)
         {
-            // change = 7
+            // change = 2
             count++;
             balance = (balance - dime);
             printf("%i\n", count);
@@ -56,18 +57,20 @@ int main(void)
         }
 
 
-        // change = 5
+        // Nickel
         else if(balance - nickel >= 0)
         {
+            // change = 2
             count++;
             balance = (balance - nickel);
             printf("%i\n", count);
             printf("%i\n", balance);
         }
 
-        // change = 2
+        // Penny
         else if(balance - penny >= 0)
         {
+            // change = 1
             count++;
             balance = (balance - penny);
             printf("%i\n", count);
