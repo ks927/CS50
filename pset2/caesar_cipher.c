@@ -22,6 +22,7 @@ int main(int argc, string argv[])
             {
                 if (s[i] + key > 90)
                 {
+                    // Account for wrap Z -> A
                     printf("%c", (s[i] + key) - 91 + 65);
                 }
                 else
@@ -34,6 +35,7 @@ int main(int argc, string argv[])
             {
                  if (s[i] + key > 122)
                 {
+                    // Account for wrap z -> a
                     printf("%c", (s[i] + key) - 123 + 97);
                 }
                 else

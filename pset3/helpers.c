@@ -47,15 +47,6 @@ bool search(int value, int values[], int n)
  */
 void sort(int values[], int n)
 {
-    // TODO: implement a sorting algorithm
-    return;
-}
-
-/**
- * Sorts array of n values.
- */
-void sort(int values[], int n)
-{
     // Implement bubble sort algorithm
     // Loop through array
     for (int i = 0; i < n-1; i++)
