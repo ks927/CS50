@@ -1,0 +1,40 @@
+What’s stdint.h?
++ A library that defines several integer types not already available. These new int types are fixed width whereas the already available int types may vary across different systems.
+
+What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
++ uintN_t or intN_t are exact-width integer types, meaning they are guaranteed to have the same number N bits across all implementation. 
++ By using them you can assign an exact number of bits to a data type. 
+
+How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
++ BYTE == 1 byte
++ DWORD == 4 bytes
++ LONG == 4 bytes
++ DWORD = 2 bytes
+
+What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
++ BITMAPFILEHEADER and BITMAPINFOHEADER
+
+What’s the difference between bfSize and biSize?
++ bfSize is the size in bytes of the bitmap file (headers + image)
++ biSize is the size in bytes of the image (includes padding)
+
+What does it mean if biHeight is negative?
++ The bitmap is a top-down DIB and its origin is the upper-left corner, whereas if biHeight is positibe, the origin is lower-left corner and it is a bottom-up DIB. 
+
+What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
++ biBitCount
+
+Why might fopen return NULL in lines 24 and 32 of copy.c?
++ The program can't find the file.
+
+Why is the third argument to fread always 1 in our code?
++ The 1 indicates how many elements are being read, and we are only reading 1 struct.
+
+What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
++ 3
+
+What does fseek do?
++ It moves the pointer to a specific location in the file stream.
+
+What is SEEK_CUR?
++ SEEK_CUR is the current location of the pointer 
