@@ -1,0 +1,20 @@
+According to its man page, what does getrusage do?
++ int getrusage(int who, struct rusage *usage)
++ Returns resource usage measures for WHO. Benchmakrs CPU time
+
+Per that same man page, how many members are in a variable of type struct rusage?
++ 16
+
+Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
++ We pass the before and after structs by reference instead of by value because they contain a lot of variables and passing them by value would take a lot of memory and slow our program down. 
+
+Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
++ After we fopen the text file (fp), a loop is initiated that reads each character of fp with c = fgetc(fp) until the loop reaches EOF. The counter (or position indicator) is assinged to word[index] and incremented (index++) after each alphabetical character that it reads. If the counter reaches a char that is a digit or longer than LENGTH = 45, it consumes the rest of the word and resets index to 0. If it reaches a char that isn't alpha/digit/or too long, it's index > 0 - thus we have found a whole word. If index > 0, we can terminate the word ('\0'), and check for misspelling.
+
+Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
++ fgetc reads each character, therefore we can easily check if there is a non-alpha character.
++ fscanf reads words until it reaches a whitespace, therefore it may check words that end in punctuation as being part of the word.
++ Finally, fscanf could check words longer than 45 characters in length which could be from a malicious source trying to break our program or could cause stack overflow/seg fault.
+
+Why do you think we declared the parameters for check and load as const (which means "constant")?
++ The parameters are passed as constants because the check and load functions are simply reading the dictionary and word and will not be changing them. 
