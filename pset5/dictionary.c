@@ -39,7 +39,7 @@ bool check(const char *word)
 
     for (int i = 0; i < word_len; i++)
     {
-        word_copy[i] = word_copy[i];
+        word_copy[i] = tolower(word[i]);
     }
 
     word_copy[word_len] = '\0';
